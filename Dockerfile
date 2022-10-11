@@ -6,7 +6,7 @@ RUN addgroup -S rathena && adduser -S rathena -G rathena
 RUN apk update \
     && apk add --no-cache coreutils util-linux git make gcc g++ mariadb-dev mariadb-connector-c-dev zlib-dev pcre-dev pcre libstdc++ dos2unix mariadb-client bind-tools linux-headers
 
-RUN git clone https://github.com/rathena/rathena.git /opt/rathena \
+RUN git clone https://github.com/tinchant/rathena.git /opt/rathena \
     && cd /opt/rathena \
     && ./configure --enable-vip=yes --enable-packetver=${PACKETVER} --with-mysql=/usr/bin/mariadb_config \
     && make clean \
